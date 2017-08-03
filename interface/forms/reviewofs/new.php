@@ -1,18 +1,3 @@
-<?php
-/**
- * Generated DocBlock
- *
- * @package OpenEMR
- * @link    http://www.open-emr.org
- * @author  sunsetsystems <sunsetsystems>
- * @author  cfapress <cfapress>
- * @author  Brady Miller <brady.g.miller@gmail.com>
- * @copyright Copyright (c) 2009 sunsetsystems <sunsetsystems>
- * @copyright Copyright (c) 2008 cfapress <cfapress>
- * @copyright Copyright (c) 2016 Brady Miller <brady.g.miller@gmail.com>
- * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
- */
-?>
 <!-- Form generated from formsWiz -->
 <?php
 use OpenEMR\Core\Header;
@@ -22,33 +7,9 @@ include_once("$srcdir/api.inc");
 formHeader("Form: reviewofs");
 $returnurl = 'encounter_top.php';
 ?>
-<html><head>
-<?php Header::setupHeader('bootstrap');?>
-
-
-<style type="text/css" title="mystyles" media="all">
-
-    .form-group{
-        margin-bottom: 5px;
-
-    }
-    legend{
-        border-bottom: 2px solid  #E5E5E5;
-        background:#E5E5E5;
-        padding-left:10px;
-    }
-    .form-horizontal .control-label {
-        padding-top: 2px;
-    }
-    fieldset{
-        border-color: #68171A !important;
-        background-color: #f2f2f2;
-        margin-bottom:10px;
-        padding-bottom:15px;
-    }
-
-
-</style>
+<html>
+<head>
+<?php Header::setupHeader();?>
 </head>
 <body class="body_top">
 <div class="container">
@@ -66,7 +27,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='fever'><?php echo xlt('Fever');?>
@@ -82,8 +43,8 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='night_sweats'><?php echo xlt('Night Sweats');?>
                                         </label>
                                     </div>
-
-                                </div>
+                                    
+                                </div>        
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
@@ -102,11 +63,11 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='insomnia'><?php echo xlt('Insomnia');?>
                                         </label>
                                     </div>
-
-                                </div>
+                                    
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='fatigued'><?php echo xlt('Fatigued');?>
@@ -117,12 +78,12 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='depressed'><?php echo xlt('Depressed');?>
                                         </label>
                                     </div>
-
-
-                                </div>
+                                    
+                                    
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='hyperactive'><?php echo xlt('Hyperactive');?>
@@ -133,10 +94,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='exposure_to_foreign_countries'><?php echo xlt('Exposure to Foreign Countries');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -144,7 +105,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='rashes'><?php echo xlt('Rashes');?>
@@ -155,37 +116,37 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='infections'><?php echo xlt('Infections');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='ulcerations'><?php echo xlt('Ulcerations');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='pemphigus'><?php echo xlt('Pemphigus');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='herpes'><?php echo xlt('Herpes');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -193,7 +154,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='cataracts'><?php echo xlt('Cataracts');?>
@@ -219,10 +180,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='blurred_vision'><?php echo xlt('Blurred Vision');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='poor_hearing'><?php echo xlt('Poor Hearing');?>
@@ -243,10 +204,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='bloody_nose'><?php echo xlt('Bloody Nose');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='sinusitis'><?php echo xlt('Sinusitis');?>
@@ -267,10 +228,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='strep_throat'><?php echo xlt('Strep Throat');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='tonsillectomy'><?php echo xlt('Tonsillectomy');?>
@@ -291,10 +252,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='throat_cancer_surgery'><?php echo xlt('Throat Cancer Surgery');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -302,7 +263,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='emphysema'><?php echo xlt('Emphysema');?>
@@ -313,10 +274,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='chronic_bronchitis'><?php echo xlt('Chronic Bronchitis');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='interstitial_lung_disease'><?php echo xlt('Interstitial Lung Disease');?>
@@ -327,10 +288,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='shortness_of_breath_2'><?php echo xlt('Shortness of Breath');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='lung_cancer'><?php echo xlt('Lung Cancer');?>
@@ -341,19 +302,19 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='lung_cancer_surgery'><?php echo xlt('Lung Cancer Surgery');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='pheumothorax'><?php echo xlt('Pheumothorax');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -361,7 +322,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='heart_attack'><?php echo xlt('Heart Attack');?>
@@ -377,10 +338,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='chest_pains'><?php echo xlt('Chest Pains');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='shortness_of_breath'><?php echo xlt('Shortness of Breath');?>
@@ -396,10 +357,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='heart_failure'><?php echo xlt('Heart Failure');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='poor_circulation'><?php echo xlt('Poor Circulation');?>
@@ -415,10 +376,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='cardiac_catheterization'><?php echo xlt('Cardiac Catheterization');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='coronary_artery_bypass'><?php echo xlt('Coronary Artery Bypass');?>
@@ -434,10 +395,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='stress_test'><?php echo xlt('Stress Test');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -445,7 +406,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='stomach_pains'><?php echo xlt('Stomach Pains');?>
@@ -471,10 +432,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='polyps'><?php echo xlt('Polyps');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='colonoscopy'><?php echo xlt('Colonoscopy');?>
@@ -500,10 +461,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='crohns_disease'><?php echo xlt('Crohn\'s Disease');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='appendectomy'><?php echo xlt('Appendectomy');?>
@@ -524,10 +485,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='gall_stones'><?php echo xlt('Gall Stones');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='cholecystectomy'><?php echo xlt('Cholecystectomy');?>
@@ -548,10 +509,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='splenectomy'><?php echo xlt('Splenectomy');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -559,7 +520,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='kidney_failure'><?php echo xlt('Kidney Failure');?>
@@ -575,10 +536,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='kidney_cancer'><?php echo xlt('Kidney Cancer');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='kidney_infections'><?php echo xlt('Kidney Infections');?>
@@ -594,10 +555,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='bladder_cancer'><?php echo xlt('Bladder Cancer');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='prostate_problems'><?php echo xlt('Prostate Problems');?>
@@ -613,10 +574,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='kidney_transplant'><?php echo xlt('Kidney Transplant');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='sexually_transmitted_disease'><?php echo xlt('Sexually Transmitted Disease');?>
@@ -632,10 +593,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='discharge_from_urethra'><?php echo xlt('Discharge From Urethra');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -643,7 +604,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='osetoarthritis'><?php echo xlt('Osetoarthritis');?>
@@ -669,10 +630,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='swollen_joints'><?php echo xlt('Swollen Joints');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='stiff_joints'><?php echo xlt('Stiff Joints');?>
@@ -698,10 +659,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='back_surgery'><?php echo xlt('Back Surgery');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='scoliosis'><?php echo xlt('Scoliosis');?>
@@ -727,10 +688,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='wrist_problems'><?php echo xlt('Wrist Problems');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='hand_problems'><?php echo xlt('Hand Problems');?>
@@ -756,10 +717,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='foot_problems'><?php echo xlt('Foot Problems');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
@@ -767,7 +728,7 @@ $returnurl = 'encounter_top.php';
                     <div class="row">
                          <div class="col-xs-12">
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='insulin_dependent_diabetes'><?php echo xlt('Insulin Dependent Diabetes');?>
@@ -778,10 +739,10 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='noninsulin_dependent_diabetes'><?php echo xlt('Non-Insulin Dependent Diabetes');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='hypothyroidism'><?php echo xlt('Hypothyroidism');?>
@@ -792,44 +753,45 @@ $returnurl = 'encounter_top.php';
                                             <input type="checkbox" name='hyperthyroidism'><?php echo xlt('Hyperthyroidism');?>
                                         </label>
                                     </div>
-
-                                </div>
+                                    
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='cushing_syndrom'><?php echo xlt('Cushing Syndrome');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
                             <div class="col-sm-3">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name='addison_syndrom'><?php echo xlt('Addison Syndrome');?>
                                         </label>
                                     </div>
-                                </div>
+                                </div>        
                             </div>
-
-                        </div>
+                            
+                        </div>   
                     </div>
                 </fieldset>
                 <fieldset>
                         <legend class=""><?php echo xlt('Additional Notes');?></legend>
                             <div class="form-group">
                                 <div class="col-sm-10 col-sm-offset-1">
-                                    <textarea name="additional_notes"   class="form-control" cols="80" rows="5" ></textarea>
+                                    <textarea name="additional_notes"    class="form-control" cols="80" rows="5" ></textarea>
                                 </div>
                             </div>
                 </fieldset>
-                <div class="form-group">
-                    <div class="col-sm-12 text-center">
-                        <div class="btn-group" role="group">
-                            <a href="javascript:top.restoreSession();document.my_form.submit();"  class="btn btn-default btn-save"><?php echo xlt('Save')?></a>
-                            <a href="<?php echo "$rootdir/patient_file/encounter/$returnurl";?>" class="btn btn-default btn-cancel"  onclick="top.restoreSession()"><?php echo xlt('Don\'t Save');?></a>
+                <?php //can change position of buttons by creating a class 'position-override' and adding rule text-alig:center or right as the case may be in individual stylesheets ?>
+                    <div class="form-group clearfix">
+                        <div class="col-sm-12 text-left position-override">
+                            <div class="btn-group btn-group-pinch" role="group">
+                            <button type='submit' onclick='top.restoreSession()' class="btn btn-default btn-save"><?php echo xlt('Save'); ?></button>
+                            <button type="button" class="btn btn-link btn-cancel btn-separate-left"onclick="top.restoreSession(); location.href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>';"><?php echo xlt('Cancel');?></button>
                         </div>
                     </div>
                 </div>

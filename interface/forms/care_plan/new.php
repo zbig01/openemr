@@ -26,7 +26,7 @@
 //           Brady Miller <brady.g.miller@gmail.com>
 //
 // +------------------------------------------------------------------------------+
- use OpenEMR\Core\Header;
+use OpenEMR\Core\Header;
 
 include_once("../../globals.php");
 include_once("$srcdir/api.inc");
@@ -34,21 +34,17 @@ require_once("$srcdir/patient.inc");
 require_once("$srcdir/options.inc.php");
 require_once($GLOBALS['srcdir'] . '/csv_like_join.php');
 require_once($GLOBALS['fileroot'] . '/custom/code_types.inc.php');
-
 formHeader("Form:Care Plan Form");
 $returnurl = 'encounter_top.php';
 $formid = 0 + (isset($_GET['id']) ? $_GET['id'] : '');
 if ($formid) {
     $sql = "SELECT * FROM `form_care_plan` WHERE id=? AND pid = ? AND encounter = ?";
     $res = sqlStatement($sql, array($formid,$_SESSION["pid"], $_SESSION["encounter"]));
-
     for ($iter = 0; $row = sqlFetchArray($res); $iter++) {
         $all[$iter] = $row;
     }
-
     $check_res = $all;
 }
-
 $check_res = $formid ? $check_res : array();
 $sql1 = "SELECT option_id AS `value`, title FROM `list_options` WHERE list_id = ?";
 $result = sqlStatement($sql1, array('Plan_of_Care_Type'));
@@ -58,25 +54,8 @@ endforeach;
 ?>
 <html>
     <head>
-        <?php Header::setupHeader(['bootstrap', 'datetime-picker']);?>
+        <?php Header::setupHeader(['datetime-picker']);?>
         <style type="text/css" title="mystyles" media="all">
-            .form-group{
-                margin-bottom: 5px;
-            }
-            legend{
-                border-bottom: 2px solid  #E5E5E5;
-                background:#E5E5E5;
-                padding-left:10px;
-            }
-            .form-horizontal .control-label {
-                padding-top: 2px;
-            }
-            fieldset{
-                border-color: #68171A !important;
-                background-color: #f2f2f2;
-                margin-bottom:10px;
-                padding-bottom:15px;
-            }
             @media only screen and (max-width: 768px) {
                 [class*="col-"] {
                 width: 100%;
@@ -84,10 +63,8 @@ endforeach;
             }
         </style>
     </head>
-
     <body class="body_top">
         <script type="text/javascript">
-
             function duplicateRow(e) {
                 var newRow = e.cloneNode(true);
                 e.parentNode.insertBefore(newRow, e.nextSibling);
@@ -101,7 +78,6 @@ endforeach;
                 changeIds('count');
                 removeVal(newRow.id);
             }
-
             function removeVal(rowid)
             {
                 rowid1 = rowid.split('tb_row_');
@@ -112,7 +88,6 @@ endforeach;
                 document.getElementById("displaytext_" + rowid1[1]).innerHTML = '';
                 document.getElementById("care_plan_type_" + rowid1[1]).value = '';
             }
-
             function changeIds(class_val) {
                 var elem = document.getElementsByClassName(class_val);
                 for (var i = 0; i < elem.length; i++) {
@@ -125,7 +100,6 @@ endforeach;
                     }
                 }
             }
-
             function deleteRow(rowId)
             {
                 if (rowId != 'tb_row_1') {
@@ -136,7 +110,6 @@ endforeach;
                     elem.parentNode.removeChild(elem);
                 }
             }
-
             function sel_code(id)
             {
                 id = id.split('tb_row_');
@@ -144,14 +117,12 @@ endforeach;
                 document.getElementById('clickId').value = checkId;
                 dlgopen('<?php echo $GLOBALS['webroot'] . "/interface/patient_file/encounter/" ?>find_code_popup.php?codetype=SNOMED-CT,LOINC,CPT4', '_blank', 700, 400);
             }
-
             function set_related(codetype, code, selector, codedesc) {
                 var checkId = document.getElementById('clickId').value;
                 document.getElementById("code" + checkId).value = code;
                 document.getElementById("codetext" + checkId).value = codedesc;
                 document.getElementById("displaytext" + checkId).innerHTML  = codedesc;
             }
-
             $(document).ready(function() {
                 // special case to deal with static and dynamic datepicker items
                 $(document).on('mouseover','.datepicker', function(){
@@ -164,10 +135,8 @@ endforeach;
                     });
                 });
             });
-
         </script>
         <div class="container">
-
             <div class="row">
                 <div class="page-header">
                         <h2><?php echo xlt('Care Plan Form'); ?></h2>
@@ -181,7 +150,7 @@ endforeach;
                     if (!empty($check_res)) {
                         foreach ($check_res as $key => $obj) {
                     ?>
-                    <div class = "tb_row" id="tb_row_<?php echo attr($key) + 1; ?>">
+                    <div class="tb_row" id="tb_row_<?php echo attr($key) + 1; ?>">
                     <div class="form-group">
                         <div class=" forms col-xs-3">
                             <label for="code_<?php echo attr($key) + 1; ?>" class="h5"><?php echo xlt('Code'); ?>:</label>
@@ -214,7 +183,6 @@ endforeach;
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
                     </div>
                     <?php
                         }
@@ -252,18 +220,18 @@ endforeach;
                                 <i class="fa fa-times-circle fa-2x text-danger"  aria-hidden="true" onclick="deleteRow(this.parentElement.parentElement.parentElement.id);"  title='<?php echo xla('Click here to delete the row'); ?>'></i>
                             </div>
                             <div class="clearfix"></div>
+                            <input type="hidden" name="count[]" id="count_1" class="count" value="1">
                         </div>
                     </div>
-
                     <?php }
                     ?>
-
                 </fieldset>
-                <div class="form-group">
-                    <div class="col-sm-12 text-center">
-                        <div class="btn-group" role="group">
-                            <a href="javascript:top.restoreSession();document.my_form.submit();" class="btn btn-default btn-save"><?php echo xlt('Save'); ?></a>
-                            <a href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>' class="btn btn-default btn-cancel" onclick="top.restoreSession()"><?php echo xlt('Don\'t Save'); ?></a>
+                <?php //can change position of buttons by creating a class 'position-override' and adding rule text-alig:center or right as the case may be in individual stylesheets ?>
+                 <div class="form-group clearfix">
+                    <div class="col-sm-12 text-left position-override">
+                        <div class="btn-group btn-group-pinch" role="group">
+                            <button type='submit' onclick='top.restoreSession()' class="btn btn-default btn-save"><?php echo xlt('Save'); ?></button>
+                            <button type="button" class="btn btn-link btn-cancel btn-separate-left"onclick="top.restoreSession(); location.href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>';"><?php echo xlt('Cancel');?></button>
                             <input type="hidden" id="clickId" value="">
                         </div>
                     </div>

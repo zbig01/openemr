@@ -1,5 +1,21 @@
-<!-- Form generated from formsWiz -->
 <?php
+/**
+- * Generated DocBlock
+ - *
+ - * @package OpenEMR
+ - * @link    http://www.open-emr.org
+ - * @author  cfapress <cfapress>
+ - * @author  bradymiller <bradymiller@users.sourceforge.net>
+ - * @author  Robert Down <robertdown@live.com>
+ - * @author  Brady Miller <brady.g.miller@gmail.com>
+ - * @author  Brady Miller <brady.g.miller@gmail.com>
+ - * @copyright Copyright (c) 2008 cfapress <cfapress>
+ - * @copyright Copyright (c) 2013 bradymiller <bradymiller@users.sourceforge.net>
+ - * @copyright Copyright (c) 2017 Robert Down <robertdown@live.com>
+ - * @copyright Copyright (c) 2017 Brady Miller <brady.g.miller@gmail.com>
+ - * @copyright Copyright (c) 2016 Brady Miller <brady.g.miller@gmail.com>
+ - * @license https://github.com/openemr/openemr/blob/master/LICENSE GNU General Public License 3
+ - **/
 use OpenEMR\Core\Header;
 
 include_once("../../globals.php");
@@ -9,28 +25,7 @@ $returnurl = 'encounter_top.php';
 ?>
 <html>
 <head>
-<?php Header::setupHeader('bootstrap');?>
-
-<style type="text/css" title="mystyles" media="all">
- 
-    .form-group{
-        margin-bottom: 5px;
-        
-    }
-    legend{
-        border-bottom: 2px solid #E5E5E5;
-        background:#E5E5E5;
-        padding-left:10px;
-    }
-    .form-horizontal .control-label {
-        padding-top: 2px;
-    }
-    fieldset{
-        background-color: #F2F2F2;
-        margin-bottom:10px;
-        padding-bottom:15px;
-    }
-</style>
+<?php Header::setupHeader();?>
 </head>
 <body class="body_top">
     <div class="container">
@@ -48,7 +43,7 @@ $returnurl = 'encounter_top.php';
                             <legend class=""><?php echo xlt('Dictation')?></legend>
                                 <div class="form-group">
                                     <div class="col-sm-10 col-sm-offset-1">
-                                        <textarea name="dictation"  class="form-control" cols="80" rows="15" ></textarea>
+                                        <textarea name="dictation"    class="form-control" cols="80" rows="15" ></textarea>
                                     </div>
                                 </div>
                     </fieldset>
@@ -56,15 +51,16 @@ $returnurl = 'encounter_top.php';
                             <legend class=""><?php echo xlt('Additional Notes'); ?></legend>
                                 <div class="form-group">
                                     <div class="col-sm-10 col-sm-offset-1">
-                                        <textarea name="additional_notes"   class="form-control" cols="80" rows="5" ></textarea>
+                                        <textarea name="additional_notes"    class="form-control" cols="80" rows="5" ></textarea>
                                     </div>
                                 </div>
                     </fieldset>
-                    <div class="form-group">
-                        <div class="col-sm-12 text-center">
-                            <div class="btn-group" role="group">
-                                <a href="javascript:top.restoreSession();document.my_form.submit();" class="btn btn-default btn-save"><?php echo xlt('Save'); ?></a>
-                                <a href="<?php echo "$rootdir/patient_file/encounter/$returnurl";?>" class="btn btn-default btn-cancel" onclick="top.restoreSession()"><?php echo xlt('Don\'t Save'); ?></a>
+                    <?php //can change position of buttons by creating a class 'position-override' and adding rule text-align:center or right as the case may be in individual stylesheets ?>
+                    <div class="form-group clearfix">
+                        <div class="col-sm-12 text-left position-override">
+                            <div class="btn-group btn-pinch" role="group">
+                                <button type='submit' onclick='top.restoreSession()' class="btn btn-default btn-save"><?php echo xlt('Save'); ?></button>
+                                <button type="button" class="btn btn-link btn-cancel btn-separate-left"onclick="top.restoreSession(); location.href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>';"><?php echo xlt('Cancel');?></button>
                             </div>
                         </div>
                     </div>

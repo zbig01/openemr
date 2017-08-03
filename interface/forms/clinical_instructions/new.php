@@ -29,7 +29,6 @@ include_once("../../globals.php");
 include_once("$srcdir/api.inc");
 require_once("$srcdir/patient.inc");
 require_once("$srcdir/options.inc.php");
-
 formHeader("Form:Clinical Instructions Form");
 $returnurl = 'encounter_top.php';
 $formid = 0 + (isset($_GET['id']) ? $_GET['id'] : '');
@@ -37,28 +36,7 @@ $check_res = $formid ? formFetch("form_clinical_instructions", $formid) : array(
 ?>
 <html>
     <head>
-        <?php Header::setupHeader('bootstrap'); ?>
-        
-        <style type="text/css" title="mystyles" media="all">
- 
-            .form-group{
-                margin-bottom: 5px;
-                
-            }
-            legend{
-                border-bottom: 2px solid #E5E5E5;
-                background:#E5E5E5;
-                padding-left:10px;
-            }
-            .form-horizontal .control-label {
-                padding-top: 2px;
-            }
-            fieldset{
-                background-color: #F2F2F2;
-                margin-bottom:10px;
-                padding-bottom:15px;
-            }
-        </style>
+        <?php Header::setupHeader(); ?>
     </head>
     <body class="body_top">
         <div class="container">
@@ -79,11 +57,12 @@ $check_res = $formid ? formFetch("form_clinical_instructions", $formid) : array(
                                 </div>
                             </div>
                         </fieldset>
-                        <div class="form-group">
-                            <div class="col-sm-12 text-center">
-                                <div class="btn-group" role="group">
-                                    <a href="javascript:top.restoreSession();document.my_form.submit();" class="btn btn-default btn-save"><?php echo xlt('Save'); ?></a>
-                                    <a href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>' class="btn btn-default btn-cancel" onclick="top.restoreSession()"><?php echo xlt('Don\'t Save'); ?></a>
+                        <?php //can change position of buttons by creating a class 'position-override' and adding rule text-align:center or right as the case may be in individual stylesheets ?>
+                        <div class="form-group clearfix">
+                            <div class="col-sm-12 text-left position-override">
+                                <div class="btn-group btn-group-pinch" role="group">
+                                    <button type='submit' onclick='top.restoreSession()' class="btn btn-default btn-save"><?php echo xlt('Save'); ?></button>
+                                    <button type="button" class="btn btn-link btn-cancel btn-separate-left"onclick="top.restoreSession(); location.href='<?php echo "$rootdir/patient_file/encounter/$returnurl";?>';"><?php echo xlt('Cancel');?></button>
                                 </div>
                             </div>
                         </div>
