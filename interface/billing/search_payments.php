@@ -404,6 +404,7 @@ document.onclick=HideTheAjaxDivs;
     overflow-x: hidden !Important;
 }
 </style>
+<title><?php echo xlt('Search Payment'); ?></title>
 </head>
 <body class="body_top" onload="OnloadAction()">
     <div class="container">
